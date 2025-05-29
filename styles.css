@@ -147,3 +147,68 @@ main {
     white-space: pre-wrap;
     color: #d4d4d4;
 }
+
+/* 
+ * オンラインコーディングエディタのカスタムスタイル
+ * Bootstrap 5をベースにした追加スタイル定義
+ */
+
+/* メインコンテナの最小高さ設定 */
+.container-fluid {
+    min-height: 100vh;
+}
+
+/* プリフォーマットテキストのスタイル調整 */
+pre {
+    font-family: 'Consolas', 'Courier New', monospace;
+    margin: 0;
+}
+
+/* エディタコンテナの高さ設定 */
+.card .editor-container {
+    height: calc(100vh - 500px);
+    min-height: 400px;
+}
+
+/* Monaco Editorのスタイル調整 */
+#editor {
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+/* 出力コンテナのスクロール設定 */
+#output {
+    max-height: calc(100vh - 500px);
+    min-height: 400px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* フォームコントロールのホバー時の動作 */
+.form-select:hover {
+    border-color: var(--bs-primary);
+}
+
+/* ボタンのトランジション効果 */
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+/* カードのシャドウ効果 */
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .card .editor-container,
+    #output {
+        height: 300px;
+        min-height: auto;
+    }
+    
+    .container-fluid {
+        padding: 1rem;
+    }
+}
