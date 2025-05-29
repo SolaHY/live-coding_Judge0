@@ -1,0 +1,149 @@
+/* 
+ * オンラインコーディングエディタのスタイル定義
+ * ダークテーマベースのモダンなUI
+ */
+
+/* グローバルリセットとボックスモデル設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基本的なページスタイル */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #1e1e1e;  /* VSCodeライクなダークテーマ */
+    color: #ffffff;
+}
+
+/* メインコンテナのレイアウト */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダーセクションのスタイル */
+header {
+    margin-bottom: 20px;
+}
+
+/* メインタイトルのスタイル */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007acc;  /* アクセントカラー - VSCodeブルー */
+}
+
+/* 問題表示セクションのスタイル */
+.problem-section {
+    background-color: #2d2d2d;  /* やや明るい背景色 */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.problem-content {
+    margin-bottom: 20px;
+}
+
+/* 問題のタイトルと見出しのスタイル */
+.problem-content h3 {
+    color: #007acc;
+    margin-bottom: 15px;
+}
+
+.problem-content h4 {
+    color: #569cd6;  /* 強調色 */
+    margin: 15px 0 5px;
+}
+
+/* コードサンプル表示のスタイル */
+.problem-content pre {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.problem-content p {
+    margin-bottom: 10px;
+}
+
+/* 制御セクション（言語選択、実行ボタン）のスタイル */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* セレクトボックスとボタンの共通スタイル */
+select, button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* 言語選択セレクトボックスのスタイル */
+select {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    min-width: 200px;
+}
+
+/* 実行ボタンのスタイル */
+button {
+    background-color: #007acc;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005c99;
+}
+
+/* メインコンテンツのグリッドレイアウト */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* エディタと出力を2カラムで表示 */
+    gap: 20px;
+    height: calc(100vh - 400px);  /* ビューポートに合わせた高さ調整 */
+}
+
+/* エディタコンテナのスタイル */
+.editor-container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Monaco Editorのスタイル */
+#editor {
+    height: 100%;
+    width: 100%;
+}
+
+/* 実行結果表示コンテナのスタイル */
+.output-container {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.output-container h3 {
+    margin-bottom: 10px;
+    color: #007acc;
+}
+
+/* 実行結果のテキストスタイル */
+#output {
+    font-family: 'Consolas', 'Courier New', monospace;
+    white-space: pre-wrap;
+    color: #d4d4d4;
+}

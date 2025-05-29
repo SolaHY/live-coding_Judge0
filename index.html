@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- 
+  オンラインコーディングエディタのメインHTML
+  - Monaco Editorを使用したコードエディタ
+  - Judge0 APIと連携した実行環境
+  - 複数言語対応（Java, Python, JavaScript, C++, PHP）
+-->
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オンラインコーディングエディタ</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Monaco Editor - VSCodeベースの高機能エディタ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+    <!-- アプリケーションスクリプト -->
+    <!-- problems.js - 問題データとテストケースの管理 -->
+    <script src="js/problems.js"></script>
+    <!-- editor.js - Monaco Editorの設定と制御 -->
+    <script src="js/editor.js"></script>
+    <!-- judge0-api.js - Judge0 APIとの通信処理 -->
+    <script src="js/judge0-api.js"></script>
+    <!-- app.js - アプリケーションのメインロジック -->
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダーセクション - タイトル、問題選択、言語選択、実行ボタン -->
+        <header>
+            <h1>オンラインコーディングエディタ</h1>
+            <!-- 問題表示セクション -->
+            <div class="problem-section">
+                <h2>問題</h2>
+                <div class="problem-content">
+                    <h3 id="problemTitle">1. 数字の合計</h3>
+                    <!-- 問題の説明文 - 動的に更新される -->
+                    <div id="problemDescription">
+                        <p>2つの整数を入力として受け取り、その合計を出力するプログラムを作成してください。</p>
+                        <h4>入力</h4>
+                        <p>2つの整数 a, b (0 ≤ a, b ≤ 100)</p>
+                        <h4>出力</h4>
+                        <p>2つの整数の合計</p>
+                        <h4>入力例</h4>
+                        <pre>5 3</pre>
+                        <h4>出力例</h4>
+                        <pre>8</pre>
+                    </div>
+                </div>
+                <!-- 問題選択ドロップダウン -->
+                <select id="problemSelect">
+                    <option value="sum">1. 数字の合計</option>
+                    <option value="fizzbuzz">2. FizzBuzz</option>
+                    <option value="php_form">3. PHPフォーム処理</option>
+                </select>
+            </div>
+            <!-- 制御セクション - 言語選択と実行ボタン -->
+            <div class="controls">
+                <!-- プログラミング言語選択 - Judge0 APIの言語IDを使用 -->
+                <select id="languageSelect">
+                    <option value="62">Java (OpenJDK 13.0.1)</option>
+                    <option value="71">Python (3.8.1)</option>
+                    <option value="63">JavaScript (Node.js 12.14.0)</option>
+                    <option value="75">C++ (GCC 9.2.0)</option>
+                    <option value="68">PHP (7.4.1)</option>
+                </select>
+                <button id="runButton">実行</button>
+            </div>
+        </header>
+        <!-- メインコンテンツ - エディタと出力表示 -->
+        <main>
+            <!-- コードエディタコンテナ -->
+            <div class="editor-container">
+                <div id="editor"></div>
+            </div>
+            <!-- 実行結果表示コンテナ -->
+            <div class="output-container">
+                <h3>実行結果</h3>
+                <pre id="output"></pre>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
